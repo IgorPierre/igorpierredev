@@ -8,7 +8,7 @@ export const Section = styled.section`
     align-items: center;
 
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 1rem;
 `
 
@@ -26,7 +26,8 @@ export const AboutContainer = styled.div`
     padding: 5rem 12rem;
 
     .profile-image{
-        width: 280px;
+        width: 50%;
+        max-width: 280px;
         height: auto;
         max-height: 400px;
         border-radius: 50% 10% 50% 50%;
@@ -34,18 +35,30 @@ export const AboutContainer = styled.div`
     }
 
     .info-container {
+        width: 70%;
         padding: 4rem;
 
         h2 {
             font-size: 3rem;
             font-weight: 900;
             color: #6B98F2;
+            padding: 1rem 0;
         }
 
         div {
             width: 100%;
             height: 200px;
             overflow-y: scroll;
+        }
+    }
+
+    @media(max-width: 980px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        .info-container {
+            width: 100%;
         }
     }
 `

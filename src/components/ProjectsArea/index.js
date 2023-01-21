@@ -25,7 +25,8 @@ export const ArowButton = styled.button`
 export const Carousel = styled.div`
     display: flex;
     align-items: flex-start;
-    width: 62rem;
+    width: 100%;
+    max-width: 62rem;
     overflow: hidden;
     scroll-behavior: smooth;
     
@@ -36,8 +37,10 @@ export const Carousel = styled.div`
         align-items: center;
         text-align: center;
 
-        width: 62rem;
-        padding: 0 5rem;
+        width: 100%;
+        max-width: 62rem;
+        padding: 0 0rem;
+
 
         .grid-img{
             display: grid;
@@ -47,7 +50,9 @@ export const Carousel = styled.div`
             column-gap: 0.5rem;
             row-gap: 5px;
             align-content: center;
-            width: 62rem;
+            width: 100%;
+            max-width: 62rem;
+            margin: 0 2.2rem;
             border-radius: 15px;
             
             .img1 {
@@ -70,6 +75,34 @@ export const Carousel = styled.div`
                 grid-area: img3;
                 border-radius: 15px;
             }
+
+            @media(max-width: 980px){
+                grid-template-areas: 
+                "img1"
+                "img2"
+                "img3";
+                margin: 0;
+                margin-left: 1.5rem;
+
+
+                .img1 {
+                    width: 18rem;
+                    grid-area: img1;
+                    border-radius: 15px;
+                }
+
+                .img2 {
+                    width: 18rem;
+                    grid-area: img2;
+                    border-radius: 15px;
+                }
+
+                .img3 {
+                    width:18rem;
+                    grid-area: img3;
+                    border-radius: 15px;
+                }
+            }
         }
 
         a {
@@ -86,5 +119,10 @@ export const Carousel = styled.div`
                 box-shadow: inset #6B98F2 20rem 0;
             }
         }
+
+        @media(max-width: 980px) {
+            padding: 0;
+            align-items: center;
+        }  
     }
 `
