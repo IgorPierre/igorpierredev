@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SkillsArea = styled.div`
-    background-color: #6B98F2;
+    background-color: #34393F;
 
     display: flex;
     justify-content: space-around;

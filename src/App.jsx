@@ -2,7 +2,6 @@
 import './App.css'
 
 //Components
-import { Header } from './components/Header'
 import { SocialLinks } from './components/SocialLinks'
 import { Navigator } from './components/Navigator'
 import { AboutContainer, Section, Title } from './components/Section'
@@ -10,7 +9,7 @@ import { ArowButton, Carousel, ProjectsArea } from './components/ProjectsArea'
 
 //Hooks
 import { useEffect, useRef, useState } from 'react'
-SiJavascript
+
 //Icons
 import { GrGithub, GrInstagram, GrLinkedin} from "react-icons/gr"
 import { AiFillCaretLeft, AiFillCaretRight} from "react-icons/ai"
@@ -19,11 +18,14 @@ import { SiCss3, SiHtml5, SiJavascript, SiMysql, SiPhp, SiReact } from "react-ic
 //Images
 import sneakersshop from "./assets/sneakers-shop.png"
 import sneakersshop2 from "./assets/sneakers-shop2.png"
+import sneakersshop3 from "./assets/sneakers-shop3.png"
 import selfie from "./assets/selfie.png"
 import locadorafilmes from "./assets/locadora-filmes.png"
 import locadorafilmes2 from "./assets/locadora-filmes2.png"
 import locadorafilmes3 from "./assets/locadora-filmes3.png"
 import nullbank from "./assets/nullbank.png"
+import nullbank2 from "./assets/nullbank2.png"
+import nullbank3 from "./assets/nullbank3.png"
 import formulario from "./assets/formulario.png"
 import formulario2 from "./assets/formulario2.png"
 import formulario3 from "./assets/formulario3.png"
@@ -35,14 +37,14 @@ function App() {
     {
       id: 1,
       name: "Sneakers Shop",
-      image: [sneakersshop, sneakersshop2, sneakersshop2],
+      image: [sneakersshop, sneakersshop2, sneakersshop3],
       description: "Interface responsiva de um pequeno E-Commerce de tênis, desenvolvido com as tecnologias ReactJs, NodeJs e MySQL",
       githubUrl: "https://github.com/IgorPierre/sneakers-shop"
     },
     {
       id: 2,
       name: "Nullbank",
-      image: [nullbank, nullbank, nullbank],
+      image: [nullbank, nullbank2, nullbank3],
       description: "Um banco virtual completo, desenvolvido com as tecnologias HTML5, CSS3, Javascript , PHP e MySQL, onde o usuário pode realizar várias transações bancárias e também possui vários niveis de acesso.",
       githubUrl: "https://github.com/EmanuelDevid/TrabalhoBD-2022_2-Equipe469870"
     },
@@ -76,14 +78,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header>
-        <Navigator verti>
-          <a href="">About</a>
-          <a href="">Skills</a>
-          <a href="">Projects</a>
-        </Navigator>
-      </Header>
-
       <SocialLinks>
         <Navigator vertical>
             <a href=""><GrGithub/></a>

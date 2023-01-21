@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-    background-color: ${props=> props.primary ? "#0D0D0D" : "#262626"};
+    background-color: ${props=> props.primary ? "#272024" : "#2B2C31"};
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -23,7 +23,7 @@ export const AboutContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 8rem 12rem;
+    padding: 5rem 12rem;
 
     .profile-image{
         width: 280px;
