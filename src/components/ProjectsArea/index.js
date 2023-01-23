@@ -2,45 +2,22 @@ import styled from "styled-components";
 
 export const ProjectsArea = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
-`
-export const ArowButton = styled.button`
-    display: ${props => props.off ? "none" : "block"};
-    background-color: transparent;
-    color: #F2F2F2;
-    font-size: 3rem;
-    border: none;
-    padding: 0;
-    
-    cursor: pointer;
-    transition: 0.3s;
+    height: 100%;
+    min-height: 70vh;
 
-    &:hover {
-        color: #6B98F2;
-    }
-`
-
-export const Carousel = styled.div`
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 62rem;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    
     .project-content{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-
         width: 100%;
+        height: 100%;
         max-width: 62rem;
         padding: 0 0rem;
-
 
         .grid-img{
             display: grid;
@@ -61,42 +38,32 @@ export const Carousel = styled.div`
                 grid-area: img1;
                 border-radius: 15px;
             }
-
             .img2 {
                 width: 20rem;
                 background-color: tomato;
                 grid-area: img2;
                 border-radius: 15px;
             }
-
             .img3 {
                 width:20rem;
                 background-color: #6B98F2;
                 grid-area: img3;
                 border-radius: 15px;
             }
-
             @media(max-width: 980px){
-                grid-template-areas: 
-                "img1"
-                "img2"
-                "img3";
-                margin: 0;
-                margin-left: 1.5rem;
-
-
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 .img1 {
                     width: 18rem;
                     grid-area: img1;
                     border-radius: 15px;
                 }
-
                 .img2 {
                     width: 18rem;
                     grid-area: img2;
                     border-radius: 15px;
                 }
-
                 .img3 {
                     width:18rem;
                     grid-area: img3;
@@ -105,24 +72,56 @@ export const Carousel = styled.div`
             }
         }
 
-        a {
-            background-color: #F2F2F2;
-            color: #0D0D0D;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.2rem 2rem;
-            margin-top: 1rem;
+        .project-details {
+            width: 40vw;
+            min-height: 40vh;
 
-            transition: 0.5s;
+            p {
+                margin-bottom: 1rem;
+            }
 
-            &:hover {
-                box-shadow: inset #6B98F2 20rem 0;
+            @media(max-width: 980px){
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
             }
         }
+    }
+`
 
-        @media(max-width: 980px) {
-            padding: 0;
-            align-items: center;
-        }  
+export const ButtonLink = styled.a`
+    background-color: #F2F2F2;
+    color: #0D0D0D;
+
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.3rem 2rem;
+    transition: 0.4s;
+
+    &:hover, &:focus {
+        box-shadow: inset 450px 0 0 0 #6B98F2;
+    }
+`
+
+
+export const ArowButton = styled.button`
+    display:  block;
+    background-color: transparent;
+    color: #F2F2F2;
+    font-size: 3rem;
+    border: none;
+    padding: 0;
+
+    position: absolute;
+    right: ${props => props.right ? "2%" : ''};
+    left: ${props => props.left ? "2%" : ''};
+
+    
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        color: #6B98F2;
     }
 `

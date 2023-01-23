@@ -5,14 +5,14 @@ import './App.css'
 import { SocialLinks } from './components/SocialLinks'
 import { Navigator } from './components/Navigator'
 import { AboutContainer, Section, Title } from './components/Section'
-import { ArowButton, Carousel, ProjectsArea } from './components/ProjectsArea'
+import { ArowButton, ButtonLink, ProjectsArea } from './components/ProjectsArea'
 
 //Hooks
 import { useEffect, useRef, useState } from 'react'
 
 //Icons
 import { GrGithub, GrInstagram, GrLinkedin} from "react-icons/gr"
-import { AiFillCaretLeft, AiFillCaretRight} from "react-icons/ai"
+import { AiFillCaretLeft, AiFillCaretRight, AiFillPropertySafety} from "react-icons/ai"
 import { SiCss3, SiHtml5, SiJavascript, SiMysql, SiPhp, SiReact } from "react-icons/si"
 
 //Images
@@ -30,6 +30,7 @@ import formulario from "./assets/formulario.png"
 import formulario2 from "./assets/formulario2.png"
 import formulario3 from "./assets/formulario3.png"
 import { SkillsArea } from './components/SkillsArea'
+
 
 function App() {
 
@@ -64,16 +65,18 @@ function App() {
     },
   ]
 
-  const carousel = useRef(0)
+
+  const [curentData, setCurentData] = useState(0)
+
 
   const handleLeftClick = (e) => {
     e.preventDefault()
-    carousel.current.scrollLeft -= carousel.current.offsetWidth
+    setCurentData(curentData -1)
   }
 
   const handleRightClick = (e) => {
     e.preventDefault()
-    carousel.current.scrollLeft += carousel.current.offsetWidth
+    setCurentData(curentData + 1)
   }
 
   return (
@@ -134,26 +137,25 @@ function App() {
         <Title primary>PROJETOS</Title>
         
         <ProjectsArea>
-          <ArowButton onClick={handleLeftClick}><AiFillCaretLeft/></ArowButton>
-          <Carousel ref={carousel}>
-            {projects.map(project=>{
-              return(
-                <div key={project.id} className='project-content'>
-                  <div className="grid-img">
-                    <img src={project.image[0]} alt="imagem do projeto" className='img1'/>
-                    <img src={project.image[1]} alt="imagem do projeto" className='img2'/>
-                    <img src={project.image[2]} alt="imagem do projeto" className='img3'/>
-                  </div>
-                  <Title>{project.name}</Title>
-                  <p>{project.description}</p>
-                  <a href={project.githubUrl}>ver mais</a>
-                </div>
-              )
-            })}
-          </Carousel>
-          <ArowButton  onClick={handleRightClick}><AiFillCaretRight/></ArowButton>
+          {(curentData != 0) && <ArowButton left onClick={handleLeftClick}><AiFillCaretLeft/></ArowButton>}
+          <div className='project-content'>
+            <div className="grid-img">
+              <img src={projects[curentData].image[0]} alt="imagem do projeto" className='img1'/>
+              <img src={projects[curentData].image[1]} alt="imagem do projeto" className='img2'/>
+              <img src={projects[curentData].image[2]} alt="imagem do projeto" className='img3'/>
+            </div>
+            <div className='project-details'>
+              <Title>{projects[curentData].name}</Title>
+              <p>{projects[curentData].description}</p>
+              <ButtonLink className='github-link' href={projects[curentData].githubUrl}>ver mais</ButtonLink>
+            </div>
+          </div>
+          {(curentData < (projects.length -1)) && <ArowButton right onClick={handleRightClick}><AiFillCaretRight/></ArowButton>}
         </ProjectsArea>
       </Section>
+
+
+
     </div>
   )
 }

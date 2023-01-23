@@ -8,6 +8,7 @@ export const Section = styled.section`
     align-items: center;
 
     width: 100%;
+    height: auto;
     min-height: 100vh;
     padding: 1rem;
 `
@@ -54,6 +55,7 @@ export const AboutContainer = styled.div`
 
     @media(max-width: 980px) {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         padding: 0;
 
