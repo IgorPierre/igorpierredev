@@ -83,9 +83,10 @@ function App() {
     <div className="App">
       <SocialLinks>
         <Navigator vertical>
-            <a href=""><GrGithub/></a>
-            <a href=""><GrInstagram/></a>
-            <a href=""><GrLinkedin/></a>
+            <a href="https://github.com/IgorPierre"><GrGithub/></a>
+            <a href="https://www.linkedin.com/in/igor-pierre-28b237202/"><GrLinkedin/></a>
+            <a href="https://www.instagram.com/igor.pierre7/"><GrInstagram/></a>
+            
         </Navigator>
       </SocialLinks>
 
