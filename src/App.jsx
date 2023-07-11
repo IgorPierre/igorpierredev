@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react'
 //Icons
 import { GrGithub, GrInstagram, GrLinkedin} from "react-icons/gr"
 import { AiFillCaretLeft, AiFillCaretRight, AiFillPropertySafety} from "react-icons/ai"
-import { SiCss3, SiHtml5, SiJavascript, SiMysql, SiPhp, SiReact } from "react-icons/si"
+import { SiCss3, SiHtml5, SiJavascript, SiMysql, SiPhp, SiReact, SiWordpress } from "react-icons/si"
 
 //Images
 import sneakersshop from "./assets/sneakers-shop.png"
@@ -131,6 +131,10 @@ function App() {
 
         <div className='skill'>
           <SiCss3/>
+        </div>
+
+        <div className='skill'>
+          <SiWordpress/>
         </div>
       </SkillsArea>
 

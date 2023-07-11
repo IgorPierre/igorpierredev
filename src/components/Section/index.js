@@ -27,7 +27,7 @@ export const AboutContainer = styled.div`
     padding: 5rem 12rem;
 
     .profile-image{
-        width: 50%;
+        width: 40%;
         max-width: 280px;
         height: auto;
         max-height: 400px;
